@@ -1,15 +1,21 @@
 # frozen_string_literal: true
 
 def palindrome_index(string)
-  return -1 if string == string.reverse
+  return -1 if palindrome?(string)
 
-  index_to_remove = 0
-  string.split(//).each_with_index do |_char, index|
-    new_string = string.split(//)
-    new_string.delete_at(index)
-    index_to_remove = index if new_string.join == new_string.reverse.join
+  s_start = 0
+  s_end = string.size - 1
+  while s_start < s_end && string[s_start].eql?(string[s_end])
+    s_start += 1
+    s_end -= 1
   end
-  index_to_remove
+
+  return s_start if palindrome?(string[0...s_start] + string[s_start + 1...string.size])
+  return s_end if palindrome?(string[0...s_end] + string[s_end + 1...string.size])
+end
+
+def palindrome?(string)
+  string.eql?(string.reverse)
 end
 
 q = gets.to_i
