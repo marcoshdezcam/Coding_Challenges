@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-def repeated_string(infiniteString, firstLetters)
-  remainder = firstLetters % infiniteString.size
-  counter = ( firstLetters / infiniteString.size ) * infiniteString.scan(/a/).size + infiniteString[0...remainder].scan(/a/).size
+def repeated_string(infinite_string, first_letters)
+  remainder = first_letters % infinite_string.size
+  counter = (first_letters / infinite_string.size) * infinite_string.scan(/a/).size + infinite_string[0...remainder].scan(/a/).size
   counter
 end
 
