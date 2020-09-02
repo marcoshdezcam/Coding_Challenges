@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 def sqrt(number)
   sqrt_recursive(number, 0, number)
-
 end
 
 def sqrt_recursive(number, min_interval, max_interval)
-  middle = ( max_interval - min_interval ) / 2 + min_interval
+  middle = (max_interval - min_interval) / 2 + min_interval
   sqrt = middle * middle
 
   if sqrt == number
