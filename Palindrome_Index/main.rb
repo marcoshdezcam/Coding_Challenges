@@ -1,21 +1,20 @@
-def palindromeIndex(string)
-  # -1 if string is already a palindrome
+# frozen_string_literal: true
+
+def palindrome_index(string)
   return -1 if string == string.reverse
-  
-  # INDEX of charachter to remove necessary to convert string to palindrome
-    # find wich index letter needs change so string == string.reverse
-    # if string == string.reverse at some point return INDEX
-    string.split(//).each do | index |
-      p 
-      # p string.delete(index)
-      # p string.delete(index)
-      # string.delete(index) == string.reverse ? index : -1
-    end
+
+  index_to_remove = 0
+  string.split(//).each_with_index do |_char, index|
+    new_string = string.split(//)
+    new_string.delete_at(index)
+    index_to_remove = index if new_string.join == new_string.reverse.join
+  end
+  index_to_remove
 end
 
 q = gets.to_i
 
 q.times do
   s = gets.to_s.rstrip
-  palindromeIndex(s)
+  p palindrome_index(s)
 end
