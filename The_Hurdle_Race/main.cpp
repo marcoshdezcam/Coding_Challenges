@@ -20,7 +20,6 @@ int hurdleRace(int k, vector<int> height) {
 
 int main()
 {
-
-
+    
     return 0;
 }
