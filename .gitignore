@@ -3,3 +3,5 @@ build-*/
 **/**.pro.user
 node_modules/
 tags
+
+.ccls-cache/
