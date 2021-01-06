@@ -3,5 +3,12 @@ build-*/
 **/**.pro.user
 node_modules/
 tags
-
 .ccls-cache/
+*.out
+.ccls
+.idea/
+CMakeLists.txt
+Gemfile
+Gemfile.lock
+yarn.lock
+cmake-build-debug/
