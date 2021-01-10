@@ -4,5 +4,3 @@ def fibonacci(seq_itr)
 
   fibonacci(seq_itr - 1) + fibonacci(seq_itr - 2)
 end
-
-fibonacci(40)

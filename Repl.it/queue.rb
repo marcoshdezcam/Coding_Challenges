@@ -32,4 +32,3 @@ class Queue
     value
   end
 end
-

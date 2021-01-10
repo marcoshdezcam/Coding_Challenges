@@ -8,7 +8,7 @@ class Node
 end
 
 class LinkedList
-  attr_accessor :head, :tail
+  attr_reader :head, :tail
 
   def initialize
     @head = @tail = nil
@@ -67,4 +67,3 @@ class LinkedList
   end
 end
 
-lista.LinkedList.new
