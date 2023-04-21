@@ -1,0 +1,19 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/marcos/IdeaProjects/Java_CodingChallenges/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+2OZYthg3VAaj78OJhR5VzSPFm42	.idea/workspace.xml	/^  <component name="ProjectId" id="2OZYthg3VAaj78OJhR5VzSPFm42" \/>$/;"	i
+51bdad76-2b80-4113-926f-04b3d3a095a7	.idea/workspace.xml	/^      <changelist id="51bdad76-2b80-4113-926f-04b3d3a095a7" name="Changes" comment="" \/>$/;"	i
+51bdad76-2b80-4113-926f-04b3d3a095a7	.idea/workspace.xml	/^    <list default="true" id="51bdad76-2b80-4113-926f-04b3d3a095a7" name="Changes" comment="">$/;"	i
+Add	.idea/workspace.xml	/^    <ConfirmationsSetting value="2" id="Add" \/>$/;"	i
+Default	.idea/workspace.xml	/^    <task active="true" id="Default" summary="Default task">$/;"	i
+InOut	src/InOut.java	/^public class InOut {$/;"	c
+Main	src/Main.java	/^public class Main {$/;"	c
+main	src/InOut.java	/^    public static void main(String[] args) {$/;"	m	class:InOut
