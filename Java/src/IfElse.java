@@ -18,6 +18,5 @@ public class IfElse {
         } else if (N > 20) {
             System.out.println("Not Weird");
         }
-
     }
 }
