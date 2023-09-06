@@ -2,13 +2,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "java",
-      "name": "lonelyInteger",
-      "request": "launch",
-      "mainClass": "lonelyInteger",
-      "projectName": "Coding_Challenges_39e5ca0f"
-    },
-    {
       "type": "rdbg",
       "name": "Debug current file with rdbg",
       "request": "launch",
