@@ -12,3 +12,5 @@ Gemfile
 Gemfile.lock
 yarn.lock
 cmake-build-debug/
+
+C\+\+/lonelyInteger
