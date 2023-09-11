@@ -1,0 +1,11 @@
+{
+  "name": "Coding_Challenges",
+  "version": "1.0.0",
+  "repository": "git@github.com:marcoshdezcam/Coding_Challenges.git",
+  "author": "Marcos Hernández Campos <marcoshdezcam@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^20.6.0",
+    "fs": "^0.0.1-security"
+  }
+}
