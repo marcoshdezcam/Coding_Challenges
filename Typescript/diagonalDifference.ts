@@ -22,5 +22,4 @@ const matrix: number[][] = [
   [10, 8, -12],
 ];
 
-const diagDiffResult: number = diagonalDifference(matrix);
-console.log(diagDiffResult);
+console.log(diagonalDifference(matrix));
