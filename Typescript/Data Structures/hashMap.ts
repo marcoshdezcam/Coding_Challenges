@@ -23,4 +23,4 @@ let myMap = new Map<string, number>([
 ]);
 myMap.set("apple", 8);
 
-console.log(myMap.("apple"));
+console.log(myMap.get("apple"));
