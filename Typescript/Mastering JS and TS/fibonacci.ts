@@ -13,5 +13,3 @@ function fib(n: number, memo: Map<number, number>): number {
   memo.set(n, result);
   return result;
 }
-
-console.log(fibonacci(51));

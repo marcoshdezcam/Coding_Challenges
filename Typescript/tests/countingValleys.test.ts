@@ -1,5 +1,3 @@
-import { countingValleys } from "../countingValleys";
-
 describe("CountingValleys", () => {
   it("Should return 1", () => {
     const result = countingValleys(8, "UDDDUDUU");
