@@ -81,3 +81,60 @@ function isUnique(str: string) {
 
   return true;
 }
+
+function flattenArray(nestedArray) {
+  /*
+    TODO: 
+      Write a function that will take an array of deeply nested arrays and extract every item, flattening the array. It should return a new array that contains the items of each internal array, preserving order.
+    * We have to process every item we receive. There’s no way to get around that so the best time complexity we can hope for is O(n).
+
+*/
+  /*
+    ? => Iterative Solution
+      Create a new array and loop through every item in the input array. If the item is an array, loop through it and add each item to the new array. If the item is not an array, add it to the new array.
+     
+    ! => Time Complexity:
+    ! => Space Complexity:
+
+        const newArray = [];
+        for(let i = 0; i < nestedArray.length; i++) {
+            const thisItem = nestedArray[i];
+            if(Array.isArray(thisItem)) {
+                for(let j = 0; j < thisItem.length; j++) {
+                    newArray.push(thisItem[j]);
+                }
+            } else {
+                newArray.push(thisItem);
+            }
+        }
+
+*/
+
+  /*
+  ? => Recursive Solution
+    Rather than passing each value inside thisItem to newArray, we first run thisItem through the flatten function. We pass the array to the same logic that we used to flatten the original array.
+      
+  ! => Time Complexity: O(n) => Linear
+      Line 10 may make this function seem like it’s O(n^2) - we have a for-loop inside a for-loop, which usually results in O(n^2). However, the inner loop only processes what the outer loop skips over.
+      Because the inner and outer loops operate on different items. No item is processed twice.
+
+  ! => Space Complexity: O(n) => Linear
+      Every item is stored in the brand new array.
+*/
+  const newArray = [];
+  for (let i = 0; i < nestedArray.length; i++) {
+    const thisItem = nestedArray[i];
+
+    if (Array.isArray(thisItem)) {
+      const flatItem = flattenArray(thisItem);
+
+      for (let j = 0; j < flatItem.length; j++) {
+        newArray.push(flatItem[j]);
+      }
+    } else {
+      newArray.push(thisItem);
+    }
+  }
+
+  return newArray;
+}
