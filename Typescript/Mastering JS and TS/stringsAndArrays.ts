@@ -138,3 +138,40 @@ function flattenArray(nestedArray) {
 
   return newArray;
 }
+
+function removeDuplicates(str: string) {
+  /*
+    TODO: 
+      Write a function that takes in a string and returns a new string. The new string should be the same as the original with every duplicate character removed.
+  */
+  /*
+    ? => Solution
+      - We create an object and an array, both of which will hold unique characters.
+      - Loop through every letter
+        - IF it's present in our object, it is a duplicate
+        - ELSE, it is unique. Add it to our object and array
+
+    const characters = {};
+    const uniqueCharacters = [];
+    for(let i = 0; i < str.length; i++) {
+        const thisChar = str[i];
+
+        if(!characters[thisChar]) {
+            characters[thisChar] = true;
+            uniqueCharacters.push(thisChar);
+        }
+    }
+    ! => Time Complexity: 
+    ! => Space Complexity:
+    */
+  /*
+    ? => Alt solution
+      - We can use a Set (items inserted only once, and keeps track of insertion order)
+        - The set will maintain a list of unique characters in order.
+    
+    ! => Time Complexity: 
+    ! => Space Complexity:
+  */
+  const uniqueCharacters = new Set(str);
+  return Array.from(uniqueCharacters).join("");
+}
