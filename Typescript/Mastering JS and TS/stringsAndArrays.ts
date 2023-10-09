@@ -225,7 +225,7 @@ function highestFrequency(strings: string[]) {
   return highestFrequencyString;
 }
 
-function stringRotation(string: string) {
+function stringRotation(str1: string, str2: string) {
   /*
     TODO: 
       - Take 2 strings and return true if they are rotations of each other.
@@ -238,12 +238,39 @@ function stringRotation(string: string) {
   /*
   ? => Solution: 
     - IF strings are not the same length, return false
-    - LOOP 
-    ! => Time Complexity: O(n) => Linear
+    - LOOP: Rotate str1 repeatedly, one character at a time
+      - IF rotated string is equal to str2, return true
+    - IF we never find a match, return false
+    ! => Time Complexity: O(n^2) => Quadratic
+      According to the spec for String.prototype.slice, it seems as if internally, slicing a string occurs in a loop. The O(n) for-loop combined with its two O(n) internal processes.
     ! => Space Complexity: O(n) => Linear
+      The amount of memory rotation needs is proportional to the number of characters in the input strings.
+
+    if(str1.length !== str2.length) {
+        return false;
+    }
+    for(let i = 0; i < str1.length; i++) {
+        const rotation = str1.slice(i, str1.length) + str1.slice(0, i);
+        if(rotation === str2) {
+            return true;
+        }
+    }
+    
+    return false;
  */
   /*
   ? => Alt Solution:
+  - IF strings are not the same length, return false
+  - Duplicate str1 and add it to the end of itself
+  - IF str2 is a substring of the duplicated string, return true
+
+    ! => Time Complexity: O(n) => Linear
+      Checking and comparing string length is constant-time, O(1).
+      The amount of time it takes to add a string to itself is proportional to the length of the string, so (str1 + str1) is O(n).
+      Checking string equality is also O(n) - all characters must be compared.
+    ! => Space Complexity: O(n) => Linear
+      Space complexity is determined by the (str1 + str1) statement above. That temporary value will be proportional to the length of the strings
     
   */
+  return str1.length === str2.length && (str1 + str1).includes(str2);
 }
