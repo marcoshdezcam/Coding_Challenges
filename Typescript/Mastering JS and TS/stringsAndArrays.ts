@@ -180,12 +180,15 @@ function highestFrequency(strings: string[]) {
   /*
     TODO: 
       Write a function that takes an array of strings and returns the most commonly occurring string in that array. If there are multiple strings with the same high frequency, return the one that finishes its occurrences first, while going left to right through the array.
+    * RETURN => string
+    * EXAMPLES:
   */
   /*
-    => Solution
+    ? => Solution
       - TRACK: 
         Highest frequency string
         Strings and their frequencies
+    
         
       - LOOP through every string in the array
         - IF string is not tracked, add it to the tracker
@@ -220,4 +223,27 @@ function highestFrequency(strings: string[]) {
   }
 
   return highestFrequencyString;
+}
+
+function stringRotation(string: string) {
+  /*
+    TODO: 
+      - Take 2 strings and return true if they are rotations of each other.
+    * RETURN => boolean
+    * EXAMPLES: 
+    *   "rotation"  "tationro" "tionrota"
+    *   "javascript"  "scriptjava"  "iptjavascr"
+    *   "RotateMe"  "teMeRota"  "eRotateM"
+  */
+  /*
+  ? => Solution: 
+    - IF strings are not the same length, return false
+    - LOOP 
+    ! => Time Complexity: O(n) => Linear
+    ! => Space Complexity: O(n) => Linear
+ */
+  /*
+  ? => Alt Solution:
+    
+  */
 }
