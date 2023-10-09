@@ -175,3 +175,49 @@ function removeDuplicates(str: string) {
   const uniqueCharacters = new Set(str);
   return Array.from(uniqueCharacters).join("");
 }
+
+function highestFrequency(strings: string[]) {
+  /*
+    TODO: 
+      Write a function that takes an array of strings and returns the most commonly occurring string in that array. If there are multiple strings with the same high frequency, return the one that finishes its occurrences first, while going left to right through the array.
+  */
+  /*
+    => Solution
+      - TRACK: 
+        Highest frequency string
+        Strings and their frequencies
+        
+      - LOOP through every string in the array
+        - IF string is not tracked, add it to the tracker
+          - Set its frequency to 1
+        - ELSE increment its frequency by 1
+        
+        - IF frequency is higher than highest frequency
+          - Set highest frequency string to current string
+    
+    ! => Time Complexity: O(n) => Linear
+      We’re processing every item once. No operations in the loop depend on the size of the array.
+    ! => Space Complexity: O(n) => Linear
+      We’re keeping track of every string that we process.
+ */
+  let highestFrequencyString = "";
+  const frequencies = {};
+  for (let i = 0; i < strings.length; i++) {
+    const thisString = strings[i];
+
+    if (!frequencies[thisString]) {
+      frequencies[thisString] = 1;
+    } else {
+      frequencies[thisString]++;
+    }
+
+    if (
+      !highestFrequencyString ||
+      frequencies[thisString] > frequencies[highestFrequencyString]
+    ) {
+      highestFrequencyString = thisString;
+    }
+  }
+
+  return highestFrequencyString;
+}
