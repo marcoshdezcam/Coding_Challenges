@@ -28,6 +28,9 @@ function sortedSearch(numbers: number[], target: number) {
     
     ! => Time complexity: O(log n) Since we’re dividing the array in half every time we loop through it.
     ! => Space complexity: O(1) Since we store a set number of variables
+    
+    ! If we have a solution with O(n ^ 2), it´s worth sorting the data.
+    ! Sorting data would be an O(n * log(n)) operation. Once sorted, next steps are often linear of logarithmic.
  */
   let startIndex = 0;
   let endIndex = numbers.length - 1;
