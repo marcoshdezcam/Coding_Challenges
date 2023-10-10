@@ -12,8 +12,10 @@ function sortedSearch(numbers: number[], target: number) {
   /*
     ? Solution 1 (Not optimal): 
       Go trough the whole array and check if target is equal to the current element.
-    ! => Time complexity: O(n) Since we’re going through the whole array,
-    ! => Space complexity: O(1) Since we store a set number of variables
+    ! => Time complexity: O(n) => Linear
+      Since we’re going through the whole array,
+    ! => Space complexity: O(1) => Constant
+      Since we store a set number of variables
  */
   /*
     ? Solution 2 (Sorted Search)
@@ -26,8 +28,10 @@ function sortedSearch(numbers: number[], target: number) {
         - IF we find the target, return the index.
         - IF we don´t find the target, evetually startIndex is equaL to endIndex -1 
     
-    ! => Time complexity: O(log n) Since we’re dividing the array in half every time we loop through it.
-    ! => Space complexity: O(1) Since we store a set number of variables
+    ! => Time complexity: O(log n) => Logarithmic
+      Since we’re dividing the array in half every time we loop through it.
+    ! => Space complexity: O(1) => Constant
+      Since we store a set number of variables
     
     ! If we have a solution with O(n ^ 2), it´s worth sorting the data.
     ! Sorting data would be an O(n * log(n)) operation. Once sorted, next steps are often linear of logarithmic.
@@ -50,4 +54,46 @@ function sortedSearch(numbers: number[], target: number) {
   }
 
   return -1;
+}
+
+function balancedBrackets(str: string): boolean {
+  /*
+    TODO: Given a string, return true if it contains all balanced parentheses (), curly-brackets {}, and square-brackets [].
+    * EXAMPLE:
+      isBalanced("(x + y) - (4)"); // -> true
+      isBalanced("(((10 ) ()) ((?)(:)))"); // -> true
+      isBalanced("[{()}]"); // -> true
+      isBalanced("(50)("); // -> false
+      isBalanced("[{]}"); // -> false
+  */
+  /*
+    ? Solution
+      - LOOP through the string
+        - IF the current character is an opening bracket, push it into the openStack array.
+        - IF the current character is a closing bracket, pop the last element from the openStack array.
+          - IF the popped element is not the corresponding opening bracket, return false.
+      - At the end of the loop, IF the openStack array is not empty, return false.
+    ! => Time complexity: O(n) => Linear
+      Every character is processed in a loop. Inside the loop, we perform only constant-time actions.
+    ! => Space complexity: O(n) => Linear
+      Characters are stored in an array, generally proportional to the size of the input.
+  */
+  let openStack = [];
+  const openBrackets = ["(", "[", "{"];
+  const closeBrackets = [")", "]", "}"];
+  const matchingBrackets = {
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  };
+
+  for (let i = 0; i < str.length; i++) {
+    if (openBrackets.includes(str[i])) openStack.push(str[i]);
+    if (closeBrackets.includes(str[i])) {
+      const lastOpenBracket = openStack.pop();
+      if (lastOpenBracket !== matchingBrackets[str[i]]) return false;
+    }
+  }
+
+  return openStack.length === 0;
 }
