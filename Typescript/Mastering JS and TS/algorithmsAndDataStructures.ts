@@ -97,3 +97,33 @@ function balancedBrackets(str: string): boolean {
 
   return openStack.length === 0;
 }
+
+class QueueWithConstantTime {
+  first: number;
+  last: number;
+  storage: {};
+
+  constructor() {
+    this.first = 0;
+    this.last = 0;
+    this.storage = {};
+  }
+
+  addToQueue(item: number) {
+    this.storage[this.last] = item;
+    this.last++;
+  }
+
+  removeFromQueue() {
+    if (this.last > this.first) {
+      const item = this.storage[this.first];
+      delete this.storage[this.first];
+      this.first++;
+      return item;
+    }
+  }
+
+  getSize(): number {
+    return this.last - this.first;
+  }
+}
