@@ -6,10 +6,14 @@ function isUnique(str: string) {
 
   /*
     ? => Solution 1
-    We go through the entire string. At each character, we make sure that the final index of the character is the same as the index our loop is currently on.
-    If this check fails, we know that the letter appears again further down the string. We can immediately return false. If we get to the end, we’ve ensured that all characters are unique and can return true.
+    We go through the entire string. 
+    At each character, we make sure that the final index of the character is the same as the index our loop is currently on.
+    If this check fails, we know that the letter appears again further down the string. 
+    We can immediately return false. 
+    If we get to the end, we’ve ensured that all characters are unique and can return true.
     ! => Time Complexity: O(n^2) => Quadratic
     ! => Space Complexity: O(1) => Constant
+
     for (let i = 0; i < str.length; i++) {
       if (str.lastIndexOf(str[i]) !== i) {
         return false;
@@ -20,8 +24,10 @@ function isUnique(str: string) {
 
   /*
     ? => Solution 2
-    We insert every character present in the string into an array and then sort the array. Since the array is sorted, identical characters will appear next to each other.
-    We then go through the sorted array one by one and check if the character is the same as the one before it. If so, we return false. If we process the whole array, we can return true.
+    We insert every character present in the string into an array and then sort the array. 
+    Since the array is sorted, identical characters will appear next to each other.
+    We then go through the sorted array one by one and check if the character is the same as the one before it. 
+    If so, we return false. If we process the whole array, we can return true.
     ! => Time Complexity: O(n * log(n))
       The complexity of a sorting algorithm can be approximated as O(n * log(n)). The loop scales linearly, giving us O(n).
       Since these two processes happen apart from one another, we can add their time complexities to get a value for the whole function. This gives us O(n + n * log(n)).
@@ -91,7 +97,8 @@ function flattenArray(nestedArray) {
 */
   /*
     ? => Iterative Solution
-      Create a new array and loop through every item in the input array. If the item is an array, loop through it and add each item to the new array. If the item is not an array, add it to the new array.
+      Create a new array and loop through every item in the input array. 
+      If the item is an array, loop through it and add each item to the new array. If the item is not an array, add it to the new array.
      
     ! => Time Complexity:
     ! => Space Complexity:
@@ -161,16 +168,16 @@ function removeDuplicates(str: string) {
             uniqueCharacters.push(thisChar);
         }
     }
-    ! => Time Complexity: 
-    ! => Space Complexity:
+    ! => Time Complexity: O(n) => Linear
+      We have to process every character
+    ! => Space Complexity: O(n) => Linear
+      We store every character twice, in an array and in an object. This gives us O(2n) which simplifies
     */
   /*
     ? => Alt solution
       - We can use a Set (items inserted only once, and keeps track of insertion order)
         - The set will maintain a list of unique characters in order.
     
-    ! => Time Complexity: 
-    ! => Space Complexity:
   */
   const uniqueCharacters = new Set(str);
   return Array.from(uniqueCharacters).join("");
@@ -198,9 +205,9 @@ function highestFrequency(strings: string[]) {
         - IF frequency is higher than highest frequency
           - Set highest frequency string to current string
     
-    ! => Time Complexity: O(n) => Linear
+    ! Time Complexity: O(n) => Linear
       We’re processing every item once. No operations in the loop depend on the size of the array.
-    ! => Space Complexity: O(n) => Linear
+    ! Space Complexity: O(n) => Linear
       We’re keeping track of every string that we process.
  */
   let highestFrequencyString = "";
@@ -241,6 +248,7 @@ function stringRotation(str1: string, str2: string) {
     - LOOP: Rotate str1 repeatedly, one character at a time
       - IF rotated string is equal to str2, return true
     - IF we never find a match, return false
+
     ! => Time Complexity: O(n^2) => Quadratic
       According to the spec for String.prototype.slice, it seems as if internally, slicing a string occurs in a loop. The O(n) for-loop combined with its two O(n) internal processes.
     ! => Space Complexity: O(n) => Linear
