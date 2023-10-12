@@ -1,4 +1,4 @@
-function sortedSearch(numbers: number[], target: number) {
+function binarySearch(numbers: number[], target: number) {
   /*
     TODO: 
       - Write a function that accepts a sorted array of integers and a number. 
@@ -18,7 +18,7 @@ function sortedSearch(numbers: number[], target: number) {
       Since we store a set number of variables
  */
   /*
-    ? Solution 2 (Sorted Search)
+    ? Solution (Sorted Search)
       - Ensure the target is within range of the array, return false if not.
       - LOOP through the array
         - IF the target is equal to the values at the begining and end of our array RETURN the index.
