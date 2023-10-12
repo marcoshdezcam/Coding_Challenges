@@ -151,3 +151,27 @@ class QueueWithTwoStacks {
     return this.dequeueStack.pop();
   }
 }
+
+class QueueWithStack {
+  stack: number[];
+
+  constructor() {
+    this.stack = [];
+  }
+
+  addToQueue(...items: number[]): void {
+    this.stack.push(...items);
+  }
+
+  removeFromQueue(): number {
+    if (this.stack.length === 0) return undefined;
+    if (this.stack.length === 1) return this.stack.pop();
+
+    if (this.stack.length > 1) {
+      const lastItem = this.stack.pop();
+      const firstItem = this.removeFromQueue();
+      this.addToQueue(lastItem);
+      return firstItem;
+    }
+  }
+}
