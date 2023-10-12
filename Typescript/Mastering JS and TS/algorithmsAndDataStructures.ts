@@ -127,3 +127,27 @@ class QueueWithConstantTime {
     return this.last - this.first;
   }
 }
+
+class QueueWithTwoStacks {
+  enqueueStack: number[];
+  dequeueStack: number[];
+
+  constructor() {
+    this.enqueueStack = [];
+    this.dequeueStack = [];
+  }
+
+  addToQueue(item: number): void {
+    this.enqueueStack.push(item);
+  }
+
+  removeFromQueue(): number {
+    if (this.dequeueStack.length == 0) return this.dequeueStack.pop();
+
+    while (this.dequeueStack.length > 0) {
+      this.dequeueStack.push(this.enqueueStack.pop());
+    }
+
+    return this.dequeueStack.pop();
+  }
+}
