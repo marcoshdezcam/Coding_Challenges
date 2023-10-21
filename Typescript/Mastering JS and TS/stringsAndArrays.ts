@@ -19,7 +19,7 @@ function isUnique(str: string) {
         return false;
       }
     }
-    
+  }
   */
 
   /*
@@ -158,29 +158,31 @@ function removeDuplicates(str: string) {
         - IF it's present in our object, it is a duplicate
         - ELSE, it is unique. Add it to our object and array
 
-    const characters = {};
-    const uniqueCharacters = [];
-    for(let i = 0; i < str.length; i++) {
-        const thisChar = str[i];
-
-        if(!characters[thisChar]) {
-            characters[thisChar] = true;
-            uniqueCharacters.push(thisChar);
-        }
-    }
     ! => Time Complexity: O(n) => Linear
       We have to process every character
     ! => Space Complexity: O(n) => Linear
       We store every character twice, in an array and in an object. This gives us O(2n) which simplifies
-    */
+  */
+  const characters = {};
+  const uniqueCharacters = [];
+  for (let i = 0; i < str.length; i++) {
+    const thisChar = str[i];
+
+    if (!characters[thisChar]) {
+      characters[thisChar] = true;
+      uniqueCharacters.push(thisChar);
+    }
+  }
+  return uniqueCharacters;
+
   /*
     ? => Alt solution
       - We can use a Set (items inserted only once, and keeps track of insertion order)
         - The set will maintain a list of unique characters in order.
     
-  */
   const uniqueCharacters = new Set(str);
   return Array.from(uniqueCharacters).join("");
+  */
 }
 
 function highestFrequency(strings: string[]) {

@@ -175,3 +175,20 @@ class QueueWithStack {
     }
   }
 }
+
+/*
+  TODO: DATA STRUCTURES
+    - Linked lists
+    - Tres, tries & Graphs
+    - Stacks & Queues
+    - Heaps
+    - Vector & Array Lists
+    - Hash tables
+  TODO: ALGORITHMS
+    - Breadth-first search
+    - Depth-first search
+    - Binary Search
+    - Merge Sort
+    - Quick Sort
+
+*/
