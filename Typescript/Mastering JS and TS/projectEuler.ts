@@ -31,32 +31,15 @@ function evenFibonacciNums(limit: number): number {
   return sumEvenValues;
 }
 
-function getPrimes(limit: number): number[] {
-  const primes: number[] = [];
-  const isPrime: boolean[] = Array(limit + 1).fill(true);
-  isPrime[0] = false;
-  isPrime[1] = false;
+function highestPrimeFactor(num: number): number {
+  let factor = 2;
 
-  for (let i = 2; i <= limit; i++) {
-    if (isPrime[i]) {
-      primes.push(i);
-      for (let j = i * i; j <= limit; j += i) {
-        isPrime[j] = false;
-      }
+  while (factor * factor <= num) {
+    if (num % factor === 0) {
+      num /= factor;
+    } else {
+      factor += 1;
     }
   }
-
-  return primes;
-}
-
-function highestPrimeFactor(limit: number): number {
-  const primeNumbers: number[] = getPrimes(limit);
-  let highestPrimeFactor: number = 0;
-
-  primeNumbers.forEach((prime) => {
-    if (limit % prime === 0) highestPrimeFactor = prime;
-  });
-
-  // Return max prime factor
-  return highestPrimeFactor;
+  return num;
 }
