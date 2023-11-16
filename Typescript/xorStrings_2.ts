@@ -1,6 +1,10 @@
 function xorStrings_2(input: string) {
   // now we can read/parse input
-  const firstString = input.slice(0, input.indexOf("\n")).replace(/ /g, "");
+  /*
+
+  const firstString: string[] = input
+    .slice(0, input.indexOf("\n"))
+    .replace(/ /g, "");
   const secondString = input
     .slice(input.indexOf("\n") + 1, input.length)
     .replace(/ /g, "");
@@ -19,4 +23,5 @@ function xorStrings_2(input: string) {
 
   console.log(xorString);
   return xorString;
+  */
 }

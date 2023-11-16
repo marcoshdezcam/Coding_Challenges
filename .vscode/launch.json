@@ -13,6 +13,14 @@
       "type": "rdbg",
       "name": "Attach with rdbg",
       "request": "attach"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Build TS Project",
+      "program": "${workspaceFolder}/${file}.ts",
+      "preLaunchTask": "TSC: Build",
+      "outFiles": ["${workspaceFolder}/out/**/*.js"]
     }
   ]
 }

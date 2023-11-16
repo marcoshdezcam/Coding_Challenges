@@ -19,6 +19,3 @@ function matchingStrings(strings: string[], queries: string[]): number[] {
 
 let strings: string[] = ["ab", "ab", "abc"];
 let queries: string[] = ["ab", "abc", "bc"];
-
-const result: number[] = matchingStrings(strings, queries);
-console.log(result);

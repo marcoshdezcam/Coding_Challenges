@@ -21,3 +21,4 @@ function getNumber(binary) {
 }
 
 */
+//# sourceMappingURL=binaryInALinkedList.js.map
