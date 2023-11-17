@@ -18,9 +18,12 @@
       "type": "node",
       "request": "launch",
       "name": "Build TS Project",
-      "program": "${workspaceFolder}/${file}.ts",
-      "preLaunchTask": "TSC: Build",
-      "outFiles": ["${workspaceFolder}/out/**/*.js"]
+      "program": "${workspaceFolder}/Typescript/out/${fileBasenameNoExtension}.js",
+      "preLaunchTask": "Build TS Project",
+      "sourceMaps": true,
+      "smartStep": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "outFiles": ["${workspaceFolder}/Typescript/out/**/*.js"]
     }
   ]
 }

@@ -23,7 +23,7 @@
     },
     {
       "type": "typescript",
-      "label": "TSC: Build Project",
+      "label": "Build TS Project",
       "tsconfig": "Typescript/tsconfig.json",
       "problemMatcher": ["$tsc"],
       "group": {
