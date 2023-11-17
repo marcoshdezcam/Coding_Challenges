@@ -1,4 +1,4 @@
-export const lotsOfPlants: number[] = [
+export const lotsOfPlants17_32374: number[] = [
   26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7,
   6, 5, 4, 3, 2, 1, 32400, 32399, 32398, 32397, 32396, 32395, 32394, 32393,
   32392, 32391, 32390, 32389, 32388, 32387, 32386, 32385, 32384, 32383, 32382,
@@ -2796,5 +2796,5 @@ export const lotsOfPlants: number[] = [
 ];
 
 module.exports = {
-  lotsOfPlants,
+  lotsOfPlants17_32374,
 };

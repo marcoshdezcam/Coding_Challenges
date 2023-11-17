@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.lotsOfPlants = void 0;
-exports.lotsOfPlants = [
+exports.lotsOfPlants17_32374 = void 0;
+exports.lotsOfPlants17_32374 = [
     26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7,
     6, 5, 4, 3, 2, 1, 32400, 32399, 32398, 32397, 32396, 32395, 32394, 32393,
     32392, 32391, 32390, 32389, 32388, 32387, 32386, 32385, 32384, 32383, 32382,
@@ -2798,6 +2798,6 @@ exports.lotsOfPlants = [
     43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27,
 ];
 module.exports = {
-    lotsOfPlants: exports.lotsOfPlants,
+    lotsOfPlants17_32374: exports.lotsOfPlants17_32374,
 };
 //# sourceMappingURL=lotsOfPlants.js.map
