@@ -2795,6 +2795,11 @@ export const lotsOfPlants17_32374: number[] = [
   43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27,
 ];
 
+export const testCase5_1: number[] = [
+  4, 5, 3, 2, 1, 6,
+];
+
 module.exports = {
   lotsOfPlants17_32374,
+  testCase5_1
 };

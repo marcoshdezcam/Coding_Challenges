@@ -1,87 +1,93 @@
-import { lotsOfPlants17_32374 } from "./lotsOfPlants";
+import { lotsOfPlants17_32374, testCase5_1 } from "./lotsOfPlants";
 
-function thereIsPoison(plants: number[]): boolean {
-  let maxIterations: number = Math.floor(plants.length / 2);
-
-  for (let plant = 0; plant < maxIterations; plant++) {
-    let leftPlantL: number = plants[plant];
-    let leftPlantR: number = plants[plant + 1];
-    const rightPlantL: number = plants.length - plant - 2;
-    const rightPlantR: number = plants.length - plant - 1;
-
-    if (leftPlantR > leftPlantL) return true;
-    if (rightPlantR > rightPlantL) return true;
-  }
-
-  return false;
+interface PlantsPointer {
+  leftIndex: number;
+  leftValue: number;
+  rightIndex: number;
+  rightValue: number;
+  nextIndex: number;
+  nextValue: number;
 }
 
-function removePlants(poisonousIndexes: number[], plants: number[]): number[] {
-  let indexOffset: number = 0;
-  let maxIterations: number = Math.floor(plants.length / 2);
+function filterPoison(
+  plants: number[],
+  poisonousIndexes: Set<number>
+): number[] {
+  let plantsWithoutPoison: number[] = [];
+  let plantsWithoutPoison_L: number[] = [];
+  let plantsWithoutPoison_R: number[] = [];
+  let left: number = 0;
+  let right: number = plants.length - 1;
 
-  // Implement two pointers to remove plants
-  // Possible use of pop() and shift() to remove elements
-  for (let plantIndex = 0; plantIndex < maxIterations; plantIndex++) {
-    let leftIndex: number = poisonousIndexes[plantIndex];
-    plants.splice(leftIndex - indexOffset, 1);
-    indexOffset++;
-    let rightIndex: number =
-      poisonousIndexes[poisonousIndexes.length - 1 - plantIndex];
-    plants.splice(rightIndex - indexOffset, 1);
+  while (left <= right) {
+    if (!poisonousIndexes.has(left)) {
+      plantsWithoutPoison_L.push(plants[left]);
+    }
+
+    if (!poisonousIndexes.has(right) && left !== right) {
+      plantsWithoutPoison_R.unshift(plants[right]);
+    }
+
+    left++;
+    right--;
   }
-  return plants;
+  plantsWithoutPoison = plantsWithoutPoison_L.concat(plantsWithoutPoison_R);
+
+  return plantsWithoutPoison;
 }
 
 function poisonousPlants(p: number[]): number {
   let days: number = 0;
   let maxIterations: number = Math.floor(p.length / 2);
-  let poisonousPlantsIndexes: Set<number> = new Set();
+  let poisonousIndexes: Set<number> = new Set<number>();
 
-  for (let plantIndex = 0; plantIndex < maxIterations; plantIndex++) {
-    const leftPlantL: number = plantIndex;
-    const leftPlantR: number = plantIndex + 1;
-    const rightPlantR: number = p.length - plantIndex - 1;
-    const rightPlantL: number = p.length - plantIndex - 2;
+  for (let index = 0; index < maxIterations; index++) {
+    let foundPoison: boolean = false;
 
-    console.log({
-      "ITERATION NUMBER": plantIndex,
-      "LEFT SIDE": {
-        Left: p[leftPlantL],
-        Right: p[leftPlantR],
-      },
-      "RIGHT SIDE": {
-        Left: p[rightPlantL],
-        Right: p[rightPlantR],
-      },
-    });
+    let leftSide: PlantsPointer = {
+      leftIndex: index,
+      leftValue: p[index],
+      rightIndex: index + 1,
+      rightValue: p[index + 1],
+      nextIndex: index + 2,
+      nextValue: p[index + 2],
+    };
+    let rightSide: PlantsPointer = {
+      leftIndex: p.length - index - 2,
+      leftValue: p[p.length - index - 2],
+      rightIndex: p.length - index - 1,
+      rightValue: p[p.length - index - 1],
+      nextIndex: p.length - index - 3,
+      nextValue: p[p.length - index - 3],
+    };
 
-    if (p[leftPlantR] > p[leftPlantL]) poisonousPlantsIndexes.add(leftPlantR);
-    if (p[rightPlantR] > p[rightPlantL])
-      poisonousPlantsIndexes.add(rightPlantR);
+    if (leftSide.rightValue > leftSide.leftValue) {
+      foundPoison = true;
+      poisonousIndexes.add(leftSide.rightIndex);
+    }
 
-    if (poisonousPlantsIndexes.size > 0 && plantIndex == maxIterations - 1) {
-      let poisonousIndexes: number[] = Array.from(poisonousPlantsIndexes).sort(
-        (a, b) => a - b
-      );
-      p = removePlants(poisonousIndexes, p);
-      poisonousPlantsIndexes.clear();
+    if (rightSide.rightValue > rightSide.leftValue) {
+      foundPoison = true;
+      poisonousIndexes.add(rightSide.rightIndex);
+    }
+
+    //! IF LOOP8 FINISHED && POISON WAS FOUND
+    if (
+      (foundPoison && index === maxIterations - 1) ||
+      (foundPoison && leftSide.nextIndex === rightSide.leftIndex)
+    ) {
+      p = filterPoison(p, poisonousIndexes);
+
       days++;
       maxIterations = Math.floor(p.length / 2);
-
-      console.log({
-        "Poisonous Plants Indexes": poisonousIndexes,
-        "Array after remove": p,
-        "POISON?": thereIsPoison(p),
-      });
-
-      if (thereIsPoison(p)) plantIndex = -1;
+      poisonousIndexes.clear();
+      index = -1;
     }
   }
 
   console.log({
     Days: days,
-    "Array after": p,
+    "Array after": p.toString(),
   });
 
   return days;
@@ -93,4 +99,4 @@ const plants4_With2 = [5, 4, 6, 1, 3, 2];
 const plants1Same = [1, 1, 1, 1, 1];
 const plantsNoPoison = [5, 4, 3, 2, 1];
 
-console.log(poisonousPlants(plants1_With2));
+console.log(poisonousPlants(testCase5_1));
