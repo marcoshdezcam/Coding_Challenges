@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const lotsOfPlants_1 = require("./lotsOfPlants");
+exports.poisonousPlants = void 0;
 function filterPoison(plants, poisonousIndexes) {
     let plantsWithoutPoison = [];
     let plantsWithoutPoison_L = [];
@@ -31,16 +31,12 @@ function poisonousPlants(p) {
             leftValue: p[index],
             rightIndex: index + 1,
             rightValue: p[index + 1],
-            nextIndex: index + 2,
-            nextValue: p[index + 2],
         };
         let rightSide = {
             leftIndex: p.length - index - 2,
             leftValue: p[p.length - index - 2],
             rightIndex: p.length - index - 1,
             rightValue: p[p.length - index - 1],
-            nextIndex: p.length - index - 3,
-            nextValue: p[p.length - index - 3],
         };
         if (leftSide.rightValue > leftSide.leftValue) {
             foundPoison = true;
@@ -50,9 +46,8 @@ function poisonousPlants(p) {
             foundPoison = true;
             poisonousIndexes.add(rightSide.rightIndex);
         }
-        //! IF LOOP8 FINISHED && POISON WAS FOUND
         if ((foundPoison && index === maxIterations - 1) ||
-            (foundPoison && leftSide.nextIndex === rightSide.leftIndex)) {
+            (foundPoison && leftSide.rightIndex + 1 === rightSide.leftIndex)) {
             p = filterPoison(p, poisonousIndexes);
             days++;
             maxIterations = Math.floor(p.length / 2);
@@ -66,10 +61,5 @@ function poisonousPlants(p) {
     });
     return days;
 }
-const plants1_With2 = [6, 5, 8, 4, 7, 10, 9];
-const plants2_With2 = [3, 2, 5, 4];
-const plants4_With2 = [5, 4, 6, 1, 3, 2];
-const plants1Same = [1, 1, 1, 1, 1];
-const plantsNoPoison = [5, 4, 3, 2, 1];
-console.log(poisonousPlants(lotsOfPlants_1.testCase5_1));
+exports.poisonousPlants = poisonousPlants;
 //# sourceMappingURL=poisonousPlants.js.map

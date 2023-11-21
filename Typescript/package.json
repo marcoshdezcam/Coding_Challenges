@@ -16,6 +16,7 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "build": "tsc --watch"
+    "build": "tsc --watch",
+    "test": "jest"
   }
 }
