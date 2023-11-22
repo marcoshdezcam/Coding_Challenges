@@ -21,41 +21,21 @@ function filterPoison(plants, poisonousIndexes) {
     return plantsWithoutPoison;
 }
 function poisonousPlants(p) {
-    let days = 0;
-    let maxIterations = Math.floor(p.length / 2);
-    let poisonousIndexes = new Set();
-    for (let index = 0; index < maxIterations; index++) {
-        let leftSide = {
-            leftIndex: index,
-            leftValue: p[index],
-            rightIndex: index + 1,
-            rightValue: p[index + 1],
-        };
-        let rightSide = {
-            leftIndex: p.length - index - 2,
-            leftValue: p[p.length - index - 2],
-            rightIndex: p.length - index - 1,
-            rightValue: p[p.length - index - 1],
-        };
-        if (leftSide.rightValue > leftSide.leftValue) {
-            poisonousIndexes.add(leftSide.rightIndex);
+    let stack = [];
+    let days = new Array(p.length).fill(0);
+    let maxDays = 0;
+    for (let i = 0; i < p.length; i++) {
+        let maxDay = 0;
+        while (stack.length > 0 && p[stack[stack.length - 1]] >= p[i]) {
+            maxDay = Math.max(maxDay, days[stack.pop()]);
         }
-        if (rightSide.rightValue > rightSide.leftValue) {
-            poisonousIndexes.add(rightSide.rightIndex);
+        if (stack.length > 0) {
+            days[i] = maxDay + 1;
         }
-        if (poisonousIndexes.size > 0 && index === maxIterations - 1) {
-            p = filterPoison(p, poisonousIndexes);
-            days++;
-            maxIterations = Math.floor(p.length / 2);
-            poisonousIndexes.clear();
-            index = -1;
-        }
+        maxDays = Math.max(maxDays, days[i]);
+        stack.push(i);
     }
-    console.log({
-        Days: days,
-        "Array after": p.toString(),
-    });
-    return days;
+    return maxDays;
 }
 exports.poisonousPlants = poisonousPlants;
 //# sourceMappingURL=poisonousPlants.js.map
