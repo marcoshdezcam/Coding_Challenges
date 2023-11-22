@@ -1,5 +1,4 @@
 function gradingStudents(grades: number[]): number[] {
-  // Write your code here
   let roundedGrades: number[] = [];
 
   for (let grade of grades) {
