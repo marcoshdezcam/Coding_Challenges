@@ -1,3 +1,5 @@
+import { lotsOfPlants } from "./lotsOfPlants";
+
 interface PlantsPointer {
   leftIndex: number;
   leftValue: number;
@@ -38,8 +40,6 @@ export function poisonousPlants(p: number[]): number {
   let poisonousIndexes: Set<number> = new Set<number>();
 
   for (let index = 0; index < maxIterations; index++) {
-    let foundPoison: boolean = false;
-
     let leftSide: PlantsPointer = {
       leftIndex: index,
       leftValue: p[index],
@@ -54,19 +54,14 @@ export function poisonousPlants(p: number[]): number {
     };
 
     if (leftSide.rightValue > leftSide.leftValue) {
-      foundPoison = true;
       poisonousIndexes.add(leftSide.rightIndex);
     }
 
     if (rightSide.rightValue > rightSide.leftValue) {
-      foundPoison = true;
       poisonousIndexes.add(rightSide.rightIndex);
     }
 
-    if (
-      (foundPoison && index === maxIterations - 1) ||
-      (foundPoison && leftSide.rightIndex + 1 === rightSide.leftIndex)
-    ) {
+    if (poisonousIndexes.size > 0 && index === maxIterations - 1) {
       p = filterPoison(p, poisonousIndexes);
 
       days++;

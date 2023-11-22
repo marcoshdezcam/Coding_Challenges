@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const lotsOfPlants_1 = require("../lotsOfPlants");
 const poisonousPlants_1 = require("../poisonousPlants");
 describe("PoisonousPlants", () => {
-    it("Should return 0", () => {
+    it("Should return 0.", () => {
         const result = (0, poisonousPlants_1.poisonousPlants)(lotsOfPlants_1.lotsOfPlants.testCase_0);
         expect(result).toEqual(0);
     });

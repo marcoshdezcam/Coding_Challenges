@@ -25,7 +25,6 @@ function poisonousPlants(p) {
     let maxIterations = Math.floor(p.length / 2);
     let poisonousIndexes = new Set();
     for (let index = 0; index < maxIterations; index++) {
-        let foundPoison = false;
         let leftSide = {
             leftIndex: index,
             leftValue: p[index],
@@ -39,15 +38,12 @@ function poisonousPlants(p) {
             rightValue: p[p.length - index - 1],
         };
         if (leftSide.rightValue > leftSide.leftValue) {
-            foundPoison = true;
             poisonousIndexes.add(leftSide.rightIndex);
         }
         if (rightSide.rightValue > rightSide.leftValue) {
-            foundPoison = true;
             poisonousIndexes.add(rightSide.rightIndex);
         }
-        if ((foundPoison && index === maxIterations - 1) ||
-            (foundPoison && leftSide.rightIndex + 1 === rightSide.leftIndex)) {
+        if (poisonousIndexes.size > 0 && index === maxIterations - 1) {
             p = filterPoison(p, poisonousIndexes);
             days++;
             maxIterations = Math.floor(p.length / 2);

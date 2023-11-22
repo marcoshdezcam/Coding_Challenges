@@ -2,7 +2,7 @@ import { lotsOfPlants } from "../lotsOfPlants";
 import { poisonousPlants } from "../poisonousPlants";
 
 describe("PoisonousPlants", () => {
-  it("Should return 0", () => {
+  it("Should return 0.", () => {
     const result = poisonousPlants(lotsOfPlants.testCase_0);
     expect(result).toEqual(0);
   });
