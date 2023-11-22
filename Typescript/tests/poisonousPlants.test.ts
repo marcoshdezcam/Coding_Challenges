@@ -1,5 +1,5 @@
-import { lotsOfPlants } from "../lotsOfPlants";
-import { poisonousPlants } from "../poisonousPlants";
+import { lotsOfPlants } from "../HackerRank/lotsOfPlants";
+import { poisonousPlants } from "../HackerRank/poisonousPlants";
 
 describe("PoisonousPlants", () => {
   it("Should return 0.", () => {
