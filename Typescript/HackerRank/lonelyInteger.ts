@@ -16,5 +16,3 @@ function lonelyInteger(s: number[]): number {
 }
 
 const integers: number[] = [1, 2, 3, 4, 3, 2, 1];
-const result: number = lonelyInteger(integers);
-console.log(result);

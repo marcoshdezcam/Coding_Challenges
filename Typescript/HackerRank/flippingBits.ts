@@ -3,5 +3,3 @@ function flippintBits(n: number): number {
 }
 
 const original: number = 10000000000;
-const result: number = flippintBits(original);
-console.log(result);

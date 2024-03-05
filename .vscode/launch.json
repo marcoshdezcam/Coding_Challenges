@@ -13,6 +13,17 @@
       "type": "rdbg",
       "name": "Attach with rdbg",
       "request": "attach"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Build TS Project",
+      "program": "${workspaceFolder}/Typescript/out/${fileBasenameNoExtension}.js",
+      "preLaunchTask": "Build TS Project",
+      "sourceMaps": true,
+      "smartStep": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "outFiles": ["${workspaceFolder}/Typescript/out/**/*.js"]
     }
   ]
 }
