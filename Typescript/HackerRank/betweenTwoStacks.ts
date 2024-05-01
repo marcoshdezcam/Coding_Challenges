@@ -46,18 +46,11 @@ function getTotalX(a: number[], b: number[]): number {
   // Write your code here
   const commonMultiples = findCommonMultiples(a, 100);
   const commonFactors = findCommonFactors(b);
-  console.log({
-    Numbers: a,
-    CommonMultiples: commonMultiples,
-    CommonFactors: commonFactors,
-  });
+
   let numsBetweenArrays: number[] = findCommonNumbers(
     commonMultiples,
     commonFactors
   );
-  console.log({
-    "Numbers Between Arrays": numsBetweenArrays,
-  });
 
   return numsBetweenArrays.length;
 }

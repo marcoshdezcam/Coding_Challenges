@@ -12,12 +12,7 @@ function getMoneySpent(keyboards, drives, budget) {
         TotalCost: totalCost,
       });
       if (totalCost <= budget) {
-        console.log("On Budget");
-        if (highestPrice > totalCost) {
-          console.log("Highest Value");
-          highestPrice = totalCost;
-          return totalCost;
-        }
+        highestPrice = totalCost;
       }
     });
   });
