@@ -1,11 +1,24 @@
-// URL: https://www.hackerrank.com/challenges/picking-numbers/problem?isFullScreen=true
-function isAbsDiffOneOrLess(a: number, b: number): boolean {
+function absDiff(a: number, b: number): number {
   let absoluteDifference: number = Math.abs(a - b);
-  return absoluteDifference <= 1;
+  return absoluteDifference;
 }
 
 function isArrayEmpty(array: number[]): boolean {
   return array.length === 0;
+}
+
+function sortArraysByLength(array: number[][]): number[][] {
+  return array.sort((a, b) => b.length - a.length);
+}
+
+function arraysAreEqual(a: number[], b: number[]): boolean {
+  if (a.length !== b.length) return false;
+
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) return false;
+  }
+
+  return true;
 }
 
 type PickedArray = {
@@ -16,9 +29,10 @@ type PickedArray = {
 
 function pickingNumbers(a: number[]): number {
   // Iterate the array
+  let orderedArray: number[] = a.sort((a, b) => a - b);
   let pickedArrays: number[][] = [[]];
 
-  a.forEach((leftPointer, index) => {
+  orderedArray.forEach((leftPointer, index) => {
     let pickedArray: number[] = [];
     let remainingItems: number[] = a.slice(index + 1);
     console.log({
@@ -27,30 +41,27 @@ function pickingNumbers(a: number[]): number {
       remainingItems,
     });
 
-    remainingItems.filter((rightPointer, index) => {
-      console.log({
-        leftPointer,
-        rightPointer,
-      });
-      if (isAbsDiffOneOrLess(leftPointer, rightPointer)) {
-        // Add both numbers if pickedArray is empty
+    remainingItems.forEach((rightPointer, index) => {
+      if (absDiff(leftPointer, rightPointer) <= 1) {
         isArrayEmpty(pickedArray)
           ? pickedArray.push(leftPointer, rightPointer)
-          : // Add just right number if is not empty
-            pickedArray.push(rightPointer);
+          : pickedArray.push(rightPointer);
 
-        // SET LEFT POINTER TO NUMBER FOUND
-        leftPointer = rightPointer;
+        // Set leftPtr to last item from pickedArray
+        leftPointer = pickedArray[pickedArray.length - 1];
       }
       console.log({
         pickedArray,
       });
+      // Saved picked arrays found
+      pickedArrays.push(pickedArray);
     });
-    pickedArrays.push(pickedArray);
   });
   console.log({
     pickedArrays,
   });
+  // sortArraysByLength(pickedArrays);
+  // let longestPickedArray: number[] = pickedArrays[0];
 
-  return pickedArrays.length;
+  return pickedArrays[0].length;
 }
