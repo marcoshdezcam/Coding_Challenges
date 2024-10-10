@@ -5,14 +5,16 @@
   "author": "Marcos Hernández Campos <marcoshdezcam@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^20.6.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "tsx": "^4.19.0"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@types/jest": "^29.5.5",
+    "@types/node": "^22.5.4",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.1",
+    "tslib": "^2.7.0",
     "typescript": "^5.2.2"
   },
   "scripts": {
