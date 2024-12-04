@@ -1,4 +1,4 @@
-export function binarySearch(nums: number[], target: number): number {
+function insertPosition(nums: number[], target: number): number {
   if (!nums || nums.length === 0) return -1;
 
   let left: number = 0,
@@ -6,13 +6,17 @@ export function binarySearch(nums: number[], target: number): number {
   while (left <= right) {
     let middle: number = left + Math.floor((right - left) / 2);
 
-    if (nums[middle] === target) return middle;
+    if (target === nums[middle]) return middle;
     if (target < nums[middle]) right = middle - 1;
     if (target > nums[middle]) left = middle + 1;
   }
 
-  return -1;
+  if (target < nums[left + 1]) {
+    return left;
+  } else {
+    return right;
+  }
 }
 
-const testArray: number[] = [-1, 0, 3, 5, 9, 12];
-console.log(binarySearch(testArray, 9));
+const testArray: number[] = [2, 4, 5, 9, 11];
+console.log(insertPosition(testArray, 5));
