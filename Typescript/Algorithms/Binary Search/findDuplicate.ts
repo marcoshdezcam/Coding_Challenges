@@ -8,6 +8,7 @@ function findDuplicates(nums: number[]): number {
 
     if (nums[middle] === nums[middle - 1]) return nums[middle];
     if (nums[middle] > middle) {
+      //? Unique sorted number array [1,2,3,...]
       left = middle;
     } else {
       right = middle;
