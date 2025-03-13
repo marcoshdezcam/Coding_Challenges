@@ -9,4 +9,8 @@ describe("Base cases", () => {
     expect(wasyFromCoins(6, [1, 2, 3])).toEqual(6)
   })
 
+  it("Should return 0", () => {
+    expect(wasyFromCoins(0, [])).toEqual(0);
+  })
+
 })

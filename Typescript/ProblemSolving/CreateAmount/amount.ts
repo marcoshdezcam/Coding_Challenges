@@ -1,29 +1,51 @@
+function sumCoinUntil(coin: number, total: number): number[] {
+  if (coin <= 0) return [];
+
+  let combinationToSum: number[] = [];
+  let result: number = 0;
+  while (result < total) {
+    result += coin;
+    console.log({
+      coin,
+      result,
+      total
+    });
+    if (result === total) combinationToSum.push(coin);
+    if (result > total) return combinationToSum;
+  }
+
+  return combinationToSum;
+}
+
 function dynamicProgramming(amount: number, coins: number[]): number {
-  // Ways Tracker
-  let possibleWays: number[] = new Array(amount).fill(0);
-  possibleWays[0] = 1;
+  if (amount <= 0) return 0;
+  if (coins.length <= 0) return 0;
+  let tracker: Map<number, number[][]> = new Map;
 
   coins.forEach(coin => {
-    // Try every coin
     console.log({
-      "new coin": coin
+      coin,
+      tracker,
     });
-    for (let hAmount = coin; hAmount <= amount; hAmount++) {
-      let change = hAmount - coin;
-      console.log({
-        coin,
-        hAmount,
-        change,
-      })
-      console.log({ possibleWays });
-      possibleWays[hAmount] += possibleWays[change];
-      console.log({
-        possibleWays,
-      });
-    }
+    let combinationFromCoin: number[] = sumCoinUntil(coin, amount);
+    let newCombination: number[] = combinationFromCoin.length === 0 ? undefined : combinationFromCoin;
+
+    let validCombinations: number[][] = tracker.get(coin);
+    console.log({
+      combinationFromCoin,
+      newCombination,
+      validCombinations
+    });
+    validCombinations.push(newCombination);
+    //if (newCombination) tracker.set(coin, validCombinations);
   })
 
-  return possibleWays[amount];
+  console.log({
+    tracker
+  })
+
+  // let amountPossibleCombinations: number = tracker.get(amount).length;
+  return 0;
 }
 
 function recursive(coins: number[], numbOfCoins: number, amount: number) {
