@@ -15,3 +15,5 @@ cmake-build-debug/
 
 C\+\+/lonelyInteger
 Typescript/out/**/*.*
+
+*.bkp

@@ -1,9 +1,12 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
   <diagram name="Page-1" id="uZ1PonCr47jCwur67oA6">
-    <mxGraphModel dx="2792" dy="1410" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1738" dy="443" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="dfaY5sT1nYUdM8X2DEHZ-1" value="" style="shape=stencil(lVjbchoxDP2afdXYsi3Lz2n6H5kJKUxpyBDSy99XLrOAtXBo3sjmHFvXI+1O6eF9/fS2mji8H/a776tfm+fDekpfJubN63q13xzs15Qep/Twstuvvu13H6/Px7/fnjqy//qx+9lP+H3kpUDaOovDn+MTDhT035OvR8J283pBYKFUPEEFEJiKu4Gp1duEWEl1JNiTCAhMNQ+EJBSBSZVaHPC5koTb+Ew84iXOQbjuMsloTy2UgMeJah3wWueYXcU3SmHAt0IF5CzqgqDwgl4VYwqaUAWErMRpdEEpAJdFKIwm1UwKcqBMYay7ItRAEppFdfTBqqJlQKiURx9imwvr1g0ymmRBYuBCpsTjBcQgbZWJXavBMipKecQrCeibckrRGY/sL9Yl4vGgzQzP2eORPeKrDlep4Z2yWADw+ZkdPqJ4mtSN9phwoPjY+R4vIL+Gr64HKON4huTwCbSM4Z2/dRayW3jNHo/OV59fw+P6LD4+GcVTSb2/gvFNHB5Npo73/RJxv2h0eDQGur/+/ILxHBxeUP3XWTEv+gudX309K9S3LrC+vwTjxZ+fcX9lrz+M7F/0ownYnX739QP1Sma5PONLwvHxeFgPn8TX6PcCvGmpbRnJ4QPoX5vpYewXIQb1FkPwQ9smJFJEu8GtBQlLXB+Ro6T0oQNsEisBp3FlnvvXNxWz2DVNg6qVIpUxSrY8wTBVPwYuAndjH42jDxa3BBotUnS6UuFgXaTNYsQgC9HrtO27AQmRXy8zHhwxzHP3VBZ3FtjiQ2ql2tBLR/CrmTmFQmQ+5LE3rbQjMCmdXpNOBMVLflislwqzbITaFgSgF1apcXEDGrBGWJpUkEmRpHoCak8jaPEERWGNfiZbHlDtdYJ4AtqKuknNEwooDSPU5XsBvqEsakmxxPAoAHeU+9Nv7f9BsB/njwQvm+32+I3h8v/+o4I9On6QSI9/AQ==);lineShape=1;strokeColor=default;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="340.0013002254941" y="537.655073380771" width="80.33863915578081" height="133.41697877122215" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
