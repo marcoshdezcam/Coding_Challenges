@@ -1,21 +1,14 @@
-export function singleMutation(str: string, str2: string): boolean | number {
-  // Return 1 => Character deletion
-  if (str.length === str2.length - 1) return 1;
-  // Return 0 => Character insertion
-  if (str.length === str2.length + 1) return 0;
-  // Return TRUE if 2 strings are the same
-  if (str.length === str2.length) {
-    for (let charIndex: number = 0; charIndex < str.length; charIndex++) {
-      const charA: string = str[charIndex], charB = str2[charIndex];
-      if (charA !== charB) return false
-    }
-    return true;
+export function singleMutation(str1: string, str2: string): boolean | number {
+  if (Math.abs(str1.length - str2.length) > 1) return false;
+  let mutations: number = 0;
+
+  for (let i: number = 0, j = 0; i < str1.length, j < str2.length; i++, j++) {
+    let char1: string = str1[i], char2 = str2[j];
+
+    if (char1 !== char2) mutations++;
+    if (mutations > 1) return false;
   }
 
-  // Return FALSE if no condition is met
-  return false;
-}
+  return true;
 
-console.log({
-  "Same string": singleMutation("abcd", "abcd")
-})
+}
