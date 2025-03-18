@@ -1,4 +1,4 @@
-import versatileSum from "./versatileSum";
+import { versatileSum } from "./versatileSum";
 
 describe("Base cases:", () => {
   it("Should return 7: ", () => {

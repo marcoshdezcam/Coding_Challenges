@@ -1,4 +1,4 @@
-export default function versatileSum(num1?: number, num2?: number): any {
+export function versatileSum(num1?: number, num2?: number): any {
   if (num1 === undefined) return versatileSum;
 
   if (num2 === undefined) {
