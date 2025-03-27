@@ -1,0 +1,19 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
+  <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="Page-1">
+    <mxGraphModel dx="860" dy="462" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" adaptiveColors="simple">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_qQRXIU5TurBQ0nMXQ-6-108" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="341.00426234463316" y="325.9958698530767" width="149.89573765536693" height="87.95095255297838" as="geometry" />
+        </mxCell>
+        <mxCell id="_qQRXIU5TurBQ0nMXQ-6-105" value="&quot;{ [ ] ( ) }&quot;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&quot;{ [ ( ] } }&quot;&lt;/div&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_qQRXIU5TurBQ0nMXQ-6-108">
+          <mxGeometry x="11.895737655366815" y="13.17413014692329" width="138" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="_qQRXIU5TurBQ0nMXQ-6-111" value="allBrackets = &quot;{ [ ] ( ) }&quot;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="523" y="316" width="138" height="101" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
